@@ -1,5 +1,6 @@
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
+import Typography from '@mui/material/Typography'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
@@ -10,7 +11,7 @@ function LoadingSpinnerComponent() {
 		let count = progress
 
 		const timer = setInterval(() => {
-			count += 100 / 6
+			count += 100 / 7
 			setProgress(count)
 		}, 900)
 
@@ -30,12 +31,21 @@ function LoadingSpinnerComponent() {
 				height={80}
 				className='w-[80px] h-[80px] rounded-full animate-bounce mt-6'
 			/>
+
+			<Typography
+				className='text-center text-white font-extrabold'
+				gutterBottom
+				variant='h6'
+				component='div'
+			>
+				Wait, we are choosing you a team...
+			</Typography>
 			<Box sx={{ width: '50%' }}>
 				<LinearProgress
-					className='h-[10px] rounded-xl'
+					className='!h-[20px] rounded-xl'
 					variant='determinate'
 					value={progress}
-					color='warning'
+					color='primary'
 				/>
 			</Box>
 		</>

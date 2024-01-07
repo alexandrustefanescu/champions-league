@@ -9,7 +9,7 @@ function MainComponent() {
 	}
 
 	return (
-		<section className='grid grid-cols-2 justify-items-center gap-4 sm:grid-cols-2 sm:gap-6 my-8 mx-2'>
+		<section className='flex flex-wrap  gap-4 sm:gap-6 my-8 mx-2'>
 			{state.teams.map(({ name, logoURL }, index) => (
 				<TeamCardComponent
 					onClick={() => removeTeam(index)}

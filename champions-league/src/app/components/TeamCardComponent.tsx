@@ -15,10 +15,7 @@ type Props = {
 
 function TeamCardComponent({ name, logoURL, onClick }: Props) {
 	return (
-		<Card
-			sx={{ maxWidth: 180, maxHeight: 300 }}
-			className='!bg-blue-950 rounded-xl'
-		>
+		<Card sx={{ width: 180, height: 260 }} className='!bg-blue-950 rounded-xl'>
 			<CardActionArea onClick={onClick}>
 				<CardMedia
 					component='img'

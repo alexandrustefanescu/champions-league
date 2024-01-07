@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react'
+import Button from '@mui/material/Button'
+import JSConfetti from 'js-confetti'
+import { useRef, useState } from 'react'
+import LoadingSpinnerComponent from './components/LoadingSpinnerComponent'
+import MainComponent from './components/MainComponent'
+import TeamCardComponent from './components/TeamCardComponent'
 import { useGlobalState } from './store/GlobalStore'
 import { STATE, Team } from './utils/utils'
-import MainComponent from './components/MainComponent'
-import LoadingSpinnerComponent from './components/LoadingSpinnerComponent'
-import Button from '@mui/material/Button'
-import TeamCardComponent from './components/TeamCardComponent'
 
 function App() {
 	const { state, dispatch } = useGlobalState()
@@ -42,7 +43,12 @@ function App() {
 				type: 'SELECT_RANDOM_TEAM',
 				payload: state.teams[randomIndex],
 			})
-		}, 6000)
+			const confetti = new JSConfetti()
+			confetti.addConfetti({
+				confettiNumber: 800,
+				confettiRadius: 6,
+			})
+		}, 7000)
 	}
 
 	const repopulateTeamList = () => {
@@ -68,7 +74,7 @@ function App() {
 							onClick={selectRandomTeam}
 							variant='contained'
 							size='large'
-							color='warning'
+							color='primary'
 						>
 							SELECT A TEAM
 						</Button>
@@ -77,7 +83,7 @@ function App() {
 							onClick={repopulateTeamList}
 							variant='contained'
 							size='large'
-							color='warning'
+							color='primary'
 						>
 							Restart
 						</Button>
@@ -104,14 +110,14 @@ function App() {
 						onClick={repopulateTeamList}
 						variant='contained'
 						size='large'
-						color='warning'
+						color='primary'
 					>
 						Restart
 					</Button>
 
 					<TeamCardComponent
-						name={state.selectedTeam?.name ?? ''}
-						logoURL={state.selectedTeam?.logoURL ?? ''}
+						name={state.selectedTeam!.name}
+						logoURL={state.selectedTeam!.logoURL}
 					/>
 				</main>
 			)}
