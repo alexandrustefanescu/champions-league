@@ -1,5 +1,3 @@
-'use client'
-
 import Box from '@mui/material/Box'
 import LinearProgress from '@mui/material/LinearProgress'
 import Image from 'next/image'

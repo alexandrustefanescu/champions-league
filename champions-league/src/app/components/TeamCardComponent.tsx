@@ -1,5 +1,3 @@
-'use client'
-
 import {
 	Card,
 	CardActionArea,
@@ -24,8 +22,8 @@ function TeamCardComponent({ name, logoURL, onClick }: Props) {
 			<CardActionArea onClick={onClick}>
 				<CardMedia
 					component='img'
-					height='80'
-					width={80}
+					height={180}
+					width={180}
 					image={logoURL}
 					alt={name}
 					className='w-[180px] h-[180px]'

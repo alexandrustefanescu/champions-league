@@ -22,7 +22,7 @@ const teamsList = [
 	{
 		name: 'Bayern München',
 		logoURL:
-			'https://images.wall-art.de/q:92/rs:fit:1560:/_img/out/pictures/master/product/2/wandtattoo-fcb-logo-mit-sternen-2021-einzel.jpg',
+			'https://www.shutterstock.com/image-vector/fc-bayern-munich-icon-logo-600nw-2268233419.jpg',
 	},
 	{
 		name: 'Barcelona',

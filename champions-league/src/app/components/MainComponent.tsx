@@ -1,5 +1,3 @@
-'use client'
-
 import { useGlobalState } from '../store/GlobalStore'
 import TeamCardComponent from './TeamCardComponent'
 
